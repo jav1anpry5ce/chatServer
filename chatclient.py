@@ -4,8 +4,8 @@ from tkinter import *
 from tkinter import simpledialog
 from tkinter import messagebox
 from tkinter import filedialog
-from DataEncrypt import DataEncrypt
-data = DataEncrypt()
+from encrypt import encrypt
+data = encrypt()
 
 try:
     running = True
@@ -63,7 +63,17 @@ try:
 
     root = Tk()
     root.title("Chat Client")
-    root.geometry("600x450")
+
+    appWidth = 600
+    appHeight = 450
+
+    screenWidth = root.winfo_screenwidth()
+    screenHeight = root.winfo_screenheight()
+
+    x = (screenWidth / 2) - (appWidth / 2)
+    y = (screenHeight / 2) - (appHeight / 2)
+
+    root.geometry(f"{appWidth}x{appHeight}+{int(x)}+{int(y)}")
     iconImg = PhotoImage(file='icon.png')
     root.iconphoto(False, iconImg)
 

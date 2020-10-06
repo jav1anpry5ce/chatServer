@@ -1,11 +1,11 @@
 import socket
 import threading
 from threading import Timer
-from DataEncrypt import DataEncrypt
-data = DataEncrypt()
+from encrypt import encrypt
+data = encrypt()
 
 # Connection Data
-host = 'localhost'
+host = '192.168.0.200'
 port = 5050
 
 # Starting Server
@@ -26,7 +26,7 @@ def broadcast(message):
 def handle(client):
     while True:
         try:
-            # Check to see if client left chat
+            # Check to see if client would like to leave chat
             message = client.recv(1024)
             message = data.decryptData(message)
             if message == "\\dis":
