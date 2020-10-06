@@ -1,5 +1,5 @@
 import pyAesCrypt
-import io,os,sys,time
+import io
 
 
 class encrypt(object):
