@@ -26,7 +26,7 @@ def broadcast(message):
 def handle(client):
     while True:
         try:
-            # Check to see if client would like to leave chat
+            # Check to see if client left chat
             message = client.recv(1024)
             message = data.decryptData(message)
             if message == "\\dis":
